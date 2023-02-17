@@ -1,0 +1,113 @@
+ <%- include('includes/header.ejs') %>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <%- include('includes/navigation.ejs') %>
+
+      <!-- END NAVIGATION -->
+
+    
+
+
+
+
+<!--
+         Begin "Products" section         -->
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Dashboard <small>Statistics Overview</small></h1>
+            <ol class="breadcrumb">
+            </ol>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <a class="alert-link" href="/">Interfata personalizata</a>! Aici fiecare user va avea un dashboard personalizat in functie de analize , programari , retete etc
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          
+            <div class="col-lg-11">
+            <div class="row">
+                <div class="col-12">
+                    <% if (products.length > 0) { %>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                              
+                                    <th scope="col">Product</th>
+                            
+                                    <th scope="col" class="text-center">Quantity</th>
+                                    <th scope="col" class="text-right">Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                    <% products.forEach(p => { %>
+                                <tr>
+                                    <td><%= p.productId.Nume%></td>
+                                    <td><input class="form-control" type="text" value="<%=p.quantity %>" /></td>
+                                    <td class="text-right"><%= p.productId.Pret%> Lei</td>
+                                    <form action="/delete-cart-item" method="POST">
+                                    <input type="hidden" value="<%= p.productId._id %>" name="productId">
+                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Remove </button> </td>
+                                </form>
+                                    <td></td>
+                                </tr>
+                                <% }) %>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                   
+                                    
+                                </tr>
+                                <tr>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><strong>Total</strong></td>
+                                    <td class="text-right"><strong><%= totalCart %> Lei</strong></td>
+                                
+                                    
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col mb-2">
+                    <div class="row">
+                        <div class="col-sm-12  col-md-6">
+                         <a href="/listare-analize" class="btn btn-block btn-success btn-sm">Adauga si alte analize</a>
+                        </div>
+                
+                        <div class="col-sm-12 col-md-6 text-right">
+                           <a href="/checkout" class="btn btn-sm  btn-block btn-success text-uppercase">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } else { %>
+                <h1>No Products in Cart!</h1>
+            <% } %>
+        </div>
+        
+        </div><!-- /.row -->
+
+      
+
+        
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+    <%- include('includes/footer.ejs') %>

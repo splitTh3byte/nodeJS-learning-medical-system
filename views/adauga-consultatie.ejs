@@ -1,0 +1,96 @@
+ <%- include('includes/header.ejs') %>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <%- include('includes/navigation.ejs') %>
+
+      <!-- END NAVIGATION -->
+
+      
+
+
+
+<!--
+         Begin "Products" section         -->
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Dashboard <small>Statistics Overview</small></h1>
+            <ol class="breadcrumb">
+           
+            </ol>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <a class="alert-link" href="/">Interfata personalizata</a>! Aici fiecare user va avea un dashboard personalizat in functie de analize , programari , retete etc
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-lg-6">
+
+<center>
+            <form action="/adaugare-consultatie" method="POST">
+     
+          
+           <div class="form-group">
+             <label for="exampleInputEmail1">Nume : </label>
+             <input type="text" class="form-control" placeholder="" name="nume" required="required">
+         </div>
+         <div class="form-group">
+           <label for="exampleInputEmail1">Prenume : </label>
+           <input type="text" class="form-control" placeholder="" name="prenume" required="required">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">Nr Telefon : </label>
+         <input type="text" class="form-control" placeholder="" name="telefon" required="required">
+     </div>
+     <div class="form-group">
+         <label for="exampleInputEmail1">Email : </label>
+         <input type="text" class="form-control" placeholder="" name="email" required="required">
+     </div>
+     <div class="form-group">
+      <label for="exampleFormControlSelect1">Selectati Medicul</label>
+      <select class="form-control" name="medicID">
+        <% for (let user of listaMedici) { %>
+        <option value="<%=user._id %>" name="userid"> Nume :<%=user.nume%>  Prenume:  <%=user.prenume %></option>
+        <input type="hidden" name="nume_medic" value="<%=user.nume%>">
+        <input type="hidden" name="prenume_medic" value="<%=user.prenume%>"> 
+
+        <% } %>
+      </select>
+    </div>
+     <!-- <div class="form-group"> Date input -->
+      <label class="control-label" for="date">Date</label>
+      <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+    
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">Adauga</button>
+  </div>
+
+     
+     
+     
+            </form>
+          </center>
+           </div>
+
+
+
+
+
+
+
+
+
+        </div><!-- /.row -->
+
+      
+
+        
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+    <%- include('includes/footer.ejs') %>

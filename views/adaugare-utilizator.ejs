@@ -1,0 +1,85 @@
+<%- include('includes/header.ejs') %>
+<div id="wrapper">
+
+  <!-- Sidebar -->
+<%- include('includes/navigation.ejs') %>
+
+
+
+
+
+
+<!---        Begin "Products" section         -->
+
+  <div id="page-wrapper">
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Dashboard <small>Statistics Overview</small></h1>
+        <ol class="breadcrumb">
+       
+        </ol>
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <a class="alert-link" href="/">Interfata personalizata</a>! Aici fiecare user va avea un dashboard personalizat in functie de analize , programari , retete etc
+        </div>
+      </div>
+    </div><!-- /.row -->
+
+
+
+
+    <div class="row">
+      <center> 
+        <div class="col-lg-6">
+
+       <form action="/adauga-utilizator" method="POST">
+
+        <div class="form-group">
+        
+          <label for="exampleInputEmail1">Username : </label>
+
+          <input type="text" class="form-control" placeholder="" name="username" required="required">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nume : </label>
+        <input type="text" class="form-control" placeholder="" name="nume" required="required">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Prenume : </label>
+      <input type="text" class="form-control" placeholder="" name="prenume" required="required">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Tipul Userului</label>
+    <select class="form-control" name="tipUser">
+      <option>user</option>
+      <option >admin</option>
+      <option >medic</option>
+    </select>
+  </div>
+<div class="form-group">
+  <label for="exampleInputEmail1">Password : </label>
+  <input type="password" class="form-control" placeholder="" name="password">
+</div>
+
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Adauga</button>
+      </div>
+
+
+
+
+       </form>
+      </div>
+      </center>
+  </div> <!---   div row -->
+
+
+
+
+
+
+</div> <!--   end wrapper-->
+
+
+<%- include('includes/footer.ejs') %>

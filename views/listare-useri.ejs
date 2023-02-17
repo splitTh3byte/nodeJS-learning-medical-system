@@ -1,0 +1,83 @@
+<%- include('includes/header.ejs') %>
+<div id="wrapper">
+
+  <!-- Sidebar -->
+<%- include('includes/navigation.ejs') %>
+  
+
+  <!-- END NAVIGATION -->
+
+
+
+<!--
+     Begin "Products" section         -->
+
+  <div id="page-wrapper">
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Dashboard <small>Statistics Overview</small></h1>
+        <ol class="breadcrumb">
+       
+        </ol>
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <a class="alert-link" href="/">Interfata personalizata</a>! Aici fiecare user va avea un dashboard personalizat in functie de analize , programari , retete etc
+        </div>
+      </div>
+    </div><!-- /.row -->
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              Userii Inregistrati
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                          
+                            <tr>
+                                <th>Nume</th>
+                                <th>Prenume</th>
+                                <th>Username</th>
+                                <th>Tip</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <% for (let user of listaUseri) { %>
+                            <tr class="odd gradeX">
+                              <td><%= user.nume %></td>
+                              <td><%= user.prenume %></td>
+                              <td><%= user.username %> </td>
+                              <td><%= user.role %> </td>
+                              <% if(role=='admin') { %>
+                                <form action="/deleteUser" method="POST">
+                                  <input type="hidden" name="id" value="<%= user._id %>">
+                                  <td><button type="submit" class="btn btn-danger btn-sm">Sterge Utilizatorul</button></td>
+
+                                </form>
+
+
+                                
+                                <% } %>
+                              <% } %>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+       </div><!-- /.row -->
+
+  
+
+    
+
+  <!-- </div>/#page-wrapper -->
+
+</div><!-- /#wrapper -->
+<%- include('includes/footer.ejs') %>

@@ -1,0 +1,192 @@
+ <%- include('includes/header.ejs') %>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <%- include('includes/navigation.ejs') %>
+
+      <!-- END NAVIGATION -->
+
+    
+
+
+
+
+<!--
+         Begin "Products" section         -->
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Dashboard <small>Statistics Overview</small></h1>
+            <ol class="breadcrumb">
+            </ol>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <a class="alert-link" href="/">Interfata personalizata</a>! Aici fiecare user va avea un dashboard personalizat in functie de analize , programari , retete etc
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <% if(role=='user'){ %>
+          <div class="col-lg-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-comments fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading"> <%=countA %> </p>
+                    <p class="announcement-text">Analize</p>
+                  </div>
+                </div>
+              </div>
+              <a href="/listare-analize">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                     in oferta noastra
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-check fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading"> <%=countRetete %> </p>
+                    <p class="announcement-text">Retete</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                     Prescrise
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-check fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading"> <%=countConsultatii %> </p>
+                    <p class="announcement-text">Consultatii</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                     Efectuate
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <% } %>
+
+          <% if(role=='admin' ){ %>
+
+            <div class="col-lg-3">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <i class="fa fa-check fa-5x"></i>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <p class="announcement-heading"> <%=userCount %> </p>
+                      <p class="announcement-text">Useri</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="#">
+                  <div class="panel-footer announcement-bottom">
+                    <div class="row">
+                      <div class="col-xs-6">
+                       In Sistem
+                      </div>
+                      <div class="col-xs-6 text-right">
+                        <i class="fa fa-arrow-circle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+
+
+            <% } %>
+            <% if(role=='medic' ){ %>
+
+              <div class="col-lg-3">
+                <div class="panel panel-warning">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <i class="fa fa-check fa-5x"></i>
+                      </div>
+                      <div class="col-xs-6 text-right">
+                        <p class="announcement-heading"> <%= countRetete %> </p>
+                        <p class="announcement-text">Retete</p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">
+                         Prescrise disponibile in sistem
+                        </div>
+                        <div class="col-xs-6 text-right">
+                          <i class="fa fa-arrow-circle-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+  
+  
+  
+              <% } %>
+        </div><!-- /.row -->
+
+      
+
+        
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+    <%- include('includes/footer.ejs') %>

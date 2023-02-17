@@ -1,0 +1,37 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+      <li class="active"><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li><a href="/listare-analize"><i class="fa fa-bar-chart-o"></i> Listeaza Analizele</a></li>
+      <li><a href="/admin/listare-useri"><i class="fa fa-bar-chart-o"></i> Listeaza Userii</a></li>
+    
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Optiuni Admin <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/adauga-utilizator">Adauga un utilizator</a></li>
+          <li><a href="/adauga-tip-analiza">Adauga un nou tip de analiza</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right navbar-user">
+      <li>
+
+        <!-- <% if(role=='user') {%> -->
+
+       <a  href="#"  data-toggle="modal" data-target="#modalCart">Cart</a>
+<!-- <% } %> -->
+
+      </li>
+
+
+
+      <li class="dropdown user-dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%=profileName %> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/profile"><i class="fa fa-user"></i> Profile</a></li>
+          <li class="divider"></li>
+          <li><a href="/logout"><i class="fa fa-power-off"></i> Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
