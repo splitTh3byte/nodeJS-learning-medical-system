@@ -52,7 +52,7 @@ app.use(AuthRoutes);
 
 mongoose.connect('mongodb://user:password@host:27017/MedicalSystem?authSource=admin', {useNewUrlParser: true,useUnifiedTopology: true }).then(
 result=>{
-   var server = app.listen(8000,'89.33.25.156',  () => {
+   var server = app.listen(8000,'host',  () => {
       var host = server.address().address
       var port = server.address().port
       
